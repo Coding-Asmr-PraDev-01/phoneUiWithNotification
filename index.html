@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="phoneBx">
+            <div class="volBtn btn1"></div>
+            <div class="volBtn btn2"></div>
+            <div class="rightSideBtn"></div>
+            <div class="msgBx">
+                <dvi class="header">
+                    <div class="logoBx"></div>
+                </dvi>
+                <div class="priceBx">
+                    <div class="leftBx">
+                        <p>Ethereum</p>
+                        <h1><span>$ </span>1,320.19</h1>
+                    </div>
+                    <div class="rightBx">
+                        <span>
+                            <i class="uil uil-analysis"></i>
+                            30.8%
+                        </span>
+                    </div>
+                </div>
+                <div class="btnsBx">
+                    <div class="btnBx">
+                        <a href="#" class="btn">Send <i class="uil uil-message"></i></a>
+                    </div>
+                    <div class="btnBx">
+                        <a href="#" class="btn">Receive <i class="uil uil-qrcode-scan"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="poweredScreen">
+
+            </div>
+            <div class="powerBtn"></div>
+        </div>
+        
+    </div>
+
+    <script>
+        const msgBx = document.querySelector('.msgBx');
+        const phoneScreen = document.querySelector('.poweredScreen');
+        const powerButton = document.querySelector('.powerBtn');
+
+        let flag = false;
+        powerButton .addEventListener('click', () => {
+            if(!flag){
+                msgBx.classList.add('active');
+                phoneScreen.style.opacity = 1;
+            }else{
+                msgBx.classList.remove('active');
+                phoneScreen.style.opacity = 0;
+            }
+            setTimeout(() => {
+                msgBx.classList.remove('active');
+            }, 4000);
+            flag = !flag;
+        });
+    </script>
+</body>
+</html>
